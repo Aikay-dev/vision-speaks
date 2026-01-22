@@ -1,3 +1,94 @@
+# VisionSpeaks
+
+Visionspeaks is a Next.js website for Visionspeaks Multimedia Ltd — a company offering CCTV monitoring, IT infrastructure, and multimedia production services. The site uses the Next.js App Router and modern React tooling to deliver a fast, media-rich marketing and portfolio site.
+
+## Features
+
+- Hero video background and animated sections
+- Service and solutions pages (CCTV Monitoring, IT, Multimedia, Smart Systems)
+- Gallery and media showcases
+- Contact form (EmailJS integration placeholder)
+- Reusable components: `Navbar`, `Footer`, and UI cards
+
+## Tech Stack
+
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS (configured via PostCSS)
+- Framer Motion for animations
+- Lucide icons
+
+## Repository Structure
+
+- `src/app` — application routes and layout (Next.js app router)
+- `src/components` — shared UI components (`Navbar.tsx`, `Footer.tsx`)
+- `public/videos` — hero and media video assets
+- `src/app/globals.css` — global styles and CSS variables
+- `package.json` — scripts and dependencies
+
+Notable files:
+
+- `src/app/page.tsx` — Home / landing page
+- `src/app/layout.tsx` — Root layout (imports `Navbar` and `Footer`)
+- `src/app/contact/page.tsx` — Contact form and office locations
+
+## Getting Started
+
+Prerequisites
+
+- Node.js 16+ (recommended)
+- A package manager: `npm`, `pnpm`, or `yarn`
+
+Install dependencies
+
+```bash
+npm install
+# or
+pnpm install
+# or
+yarn
+```
+
+Run development server
+
+```bash
+npm run dev
+# then open http://localhost:3000
+```
+
+Build for production
+
+```bash
+npm run build
+npm run start
+```
+
+Linting
+
+```bash
+npm run lint
+```
+
+## Environment & Deployment Notes
+
+- The project includes video assets under `public/videos`. Keep large media out of the repo for production; consider using a CDN.
+- Recommended deployment: Vercel (native Next.js support). Other Node hosts or adapters for static exports are also possible.
+
+## Contributing
+
+- Fork the repo and create a feature branch.
+- Follow the existing code style and TypeScript types.
+- Open a pull request with a clear description of changes.
+
+## TODO / Suggestions
+
+- Add a LICENSE file if you plan to open-source the repository.
+- Integrate EmailJS keys via environment variables and server actions for production.
+- Add automated linting/formatting (Prettier, ESLint rules) and CI (GitHub Actions).
+
+---
+
+If you'd like, I can also add a small `CONTRIBUTING.md`, set up GitHub Actions for linting, or help move large media to a cloud storage/CDN.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
