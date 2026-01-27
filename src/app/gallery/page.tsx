@@ -1,71 +1,71 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Youtube, Facebook, ExternalLink } from 'lucide-react';
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://visionspeaks.com"),
-  title: {
-    default: "Media Gallery | Visionspeaks Multimedia Ltd",
-    template: "%s | Visionspeaks Multimedia Ltd",
-  },
-  description:
-    "Explore the media gallery of Visionspeaks Multimedia Ltd, featuring project showcases, installations, corporate updates, and social media highlights.",
-  keywords: [
-    "Visionspeaks",
-    "Media Gallery",
-    "Videos",
-    "Facebook Updates",
-    "YouTube Showcases",
-    "Project Highlights",
-    "Corporate Updates",
-    "IT solutions Nigeria",
-    "security solutions Africa",
-    "multimedia company Nigeria",
-  ],
-  authors: [{ name: "Visionspeaks Multimedia Ltd" }],
-  creator: "Visionspeaks Multimedia Ltd",
-  publisher: "Visionspeaks Multimedia Ltd",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    url: "https://visionspeaks.com/gallery",
-    title: "Media Gallery | Visionspeaks Multimedia Ltd",
-    description:
-      "Browse our latest videos, project highlights, and social media updates on the Visionspeaks Multimedia gallery.",
-    siteName: "Visionspeaks",
-    images: [
-      {
-        url: "/og-image-gallery.jpg", // create a custom OG image for Gallery page
-        width: 1200,
-        height: 630,
-        alt: "Visionspeaks Media Gallery",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Media Gallery | Visionspeaks Multimedia Ltd",
-    description:
-      "Discover videos, social updates, and project highlights in the Visionspeaks Multimedia gallery.",
-    images: ["/og-image-gallery.jpg"],
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-};
+// export const metadata: Metadata = {
+//   metadataBase: new URL("https://visionspeaks.com"),
+//   title: {
+//     default: "Media Gallery | Visionspeaks Multimedia Ltd",
+//     template: "%s | Visionspeaks Multimedia Ltd",
+//   },
+//   description:
+//     "Explore the media gallery of Visionspeaks Multimedia Ltd, featuring project showcases, installations, corporate updates, and social media highlights.",
+//   keywords: [
+//     "Visionspeaks",
+//     "Media Gallery",
+//     "Videos",
+//     "Facebook Updates",
+//     "YouTube Showcases",
+//     "Project Highlights",
+//     "Corporate Updates",
+//     "IT solutions Nigeria",
+//     "security solutions Africa",
+//     "multimedia company Nigeria",
+//   ],
+//   authors: [{ name: "Visionspeaks Multimedia Ltd" }],
+//   creator: "Visionspeaks Multimedia Ltd",
+//   publisher: "Visionspeaks Multimedia Ltd",
+//   robots: {
+//     index: true,
+//     follow: true,
+//     googleBot: {
+//       index: true,
+//       follow: true,
+//       "max-image-preview": "large",
+//       "max-snippet": -1,
+//       "max-video-preview": -1,
+//     },
+//   },
+//   openGraph: {
+//     type: "website",
+//     url: "https://visionspeaks.com/gallery",
+//     title: "Media Gallery | Visionspeaks Multimedia Ltd",
+//     description:
+//       "Browse our latest videos, project highlights, and social media updates on the Visionspeaks Multimedia gallery.",
+//     siteName: "Visionspeaks",
+//     images: [
+//       {
+//         url: "/og-image-gallery.jpg", // create a custom OG image for Gallery page
+//         width: 1200,
+//         height: 630,
+//         alt: "Visionspeaks Media Gallery",
+//       },
+//     ],
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Media Gallery | Visionspeaks Multimedia Ltd",
+//     description:
+//       "Discover videos, social updates, and project highlights in the Visionspeaks Multimedia gallery.",
+//     images: ["/og-image-gallery.jpg"],
+//   },
+//   icons: {
+//     icon: "/favicon.ico",
+//     shortcut: "/favicon.ico",
+//     apple: "/apple-touch-icon.png",
+//   },
+// };
 
 const facebookPosts = [
   "https://www.facebook.com/share/p/BwSBAviEeSZUNFej/",
