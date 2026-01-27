@@ -9,14 +9,17 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
-import preciouspic from "@/assets/precious.jpeg";
+import preciouspic from "@/assets/pfp.jpeg";
 import Image from "next/image";
+import ScrollDown from "@/components/scroll-down";
+import TestimonialsCTA from "@/components/test-cta";
 
 export default function Home() {
   return (
     <div className="relative">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        <ScrollDown />
         <div className="absolute inset-0 z-0">
           <video
             src="/videos/hero.mp4"
@@ -39,7 +42,7 @@ export default function Home() {
               Innovation in Motion
             </span>
             <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter">
-              Now the <span className="gradient-text">Vision</span> is Speaking
+              Now the <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">Vision</span> is Speaking
             </h1>
             <p className="text-xl md:text-2xl text-textSecondary max-w-3xl mx-auto mb-12 leading-relaxed">
               Cutting-edge Multimedia, IT & Security Solutions for Africa and
@@ -68,7 +71,7 @@ export default function Home() {
       </section>
 
       {/* Quick Intro */}
-      <section className="py-24 bg-surface/30">
+      <section id="intro" className="py-24 bg-surface/30">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -207,6 +210,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <TestimonialsCTA />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { Shield, Facebook, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import Image from "next/image";
+import logo from "@/assets/logo.png";
 
 export default function Footer() {
   return (
@@ -8,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
-              <Shield className="w-8 h-8 text-primary" />
+               <Image src={logo} alt="LOGO" height={40} />
               <span className="text-xl font-bold tracking-tighter">VISIONSPEAKS</span>
             </Link>
             <p className="text-textSecondary leading-relaxed">

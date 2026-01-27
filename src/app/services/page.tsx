@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { motion } from 'framer-motion';
 import { 
   Shield, Video, Cpu, Fingerprint, Home, 
@@ -6,6 +6,71 @@ import {
   Film, Mic, Layers, Settings, Zap, 
   Lock, Sun, Wifi 
 } from 'lucide-react';
+// import type { Metadata } from "next";
+
+// export const metadata: Metadata = {
+//   metadataBase: new URL("https://visionspeaks.com"),
+//   title: {
+//     default: "Services & Solutions | Visionspeaks Multimedia Ltd",
+//     template: "%s | Visionspeaks Multimedia Ltd",
+//   },
+//   description:
+//     "Discover the full range of services offered by Visionspeaks Multimedia Ltd, including advanced security systems, media production, IT solutions, and smart home & office automation tailored for businesses and individuals.",
+//   keywords: [
+//     "Visionspeaks",
+//     "Security services Nigeria",
+//     "Media production Nigeria",
+//     "IT solutions Africa",
+//     "Smart home automation",
+//     "CCTV monitoring services",
+//     "Corporate IT services",
+//     "Biometric systems Nigeria",
+//     "Film production services",
+//     "Multimedia solutions",
+//   ],
+//   authors: [{ name: "Visionspeaks Multimedia Ltd" }],
+//   creator: "Visionspeaks Multimedia Ltd",
+//   publisher: "Visionspeaks Multimedia Ltd",
+//   robots: {
+//     index: true,
+//     follow: true,
+//     googleBot: {
+//       index: true,
+//       follow: true,
+//       "max-image-preview": "large",
+//       "max-snippet": -1,
+//       "max-video-preview": -1,
+//     },
+//   },
+//   openGraph: {
+//     type: "website",
+//     url: "https://visionspeaks.com/services",
+//     title: "Services & Solutions | Visionspeaks Multimedia Ltd",
+//     description:
+//       "Explore Visionspeaks Multimedia Ltd's technological solutions in security, media, IT, and smart home & office automation.",
+//     siteName: "Visionspeaks",
+//     images: [
+//       {
+//         url: "/og-image-services.jpg", // create a custom OG image for Services page
+//         width: 1200,
+//         height: 630,
+//         alt: "Visionspeaks Services & Solutions",
+//       },
+//     ],
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Services & Solutions | Visionspeaks Multimedia Ltd",
+//     description:
+//       "Offering security, media production, IT, and smart automation solutions across Africa with excellence and innovation.",
+//     images: ["/og-image-services.jpg"],
+//   },
+//   icons: {
+//     icon: "/favicon.ico",
+//     shortcut: "/favicon.ico",
+//     apple: "/apple-touch-icon.png",
+//   },
+// };
 
 const serviceCategories = [
   {
@@ -113,7 +178,7 @@ export default function Services() {
           <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto">
             Contact our technical team today for a comprehensive assessment of your security or IT needs.
           </p>
-          <a href="/contact" className="inline-block px-10 py-4 bg-white text-primary rounded-full font-bold text-lg hover:bg-gray-100 transition-all">
+          <a href="/contact" className="inline-block px-10 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-100 transition-all">
             Request a Consultation
           </a>
         </div>
