@@ -49,7 +49,7 @@ export default function Footer() {
             <ul className="space-y-4 text-textSecondary">
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span>Visionspeaks.multimedia@gmail.com</span>
+                <span>ceo@visionspeakstech.com</span>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />

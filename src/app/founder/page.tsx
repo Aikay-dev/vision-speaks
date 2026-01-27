@@ -116,12 +116,12 @@ export default function Founder() {
                     <span>0803 382 5615</span>
                   </a>
                   <a
-                    href="mailto:Visionspeaks.multimedia@gmail.com"
+                    href="mailto:ceo@visionspeakstech.com"
                     className="flex items-center space-x-3 text-textSecondary hover:text-primary transition-colors"
                   >
                     <Mail size={20} className="text-primary" />
                     <span className="text-sm">
-                      Visionspeaks.multimedia@gmail.com
+                      ceo@visionspeakstech.com
                     </span>
                   </a>
                 </div>

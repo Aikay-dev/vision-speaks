@@ -118,7 +118,7 @@ export default function Downloads() {
           <div className="mt-16 p-8 bg-surface rounded-2xl border border-border flex items-center space-x-4">
             <Shield className="text-secondary w-8 h-8 shrink-0" />
             <p className="text-textSecondary text-sm">
-              All documents are provided in PDF format. If you have trouble downloading, please contact our support team at Visionspeaks.multimedia@gmail.com
+              All documents are provided in PDF format. If you have trouble downloading, please contact our support team at ceo@visionspeakstech.com
             </p>
           </div>
         </div>

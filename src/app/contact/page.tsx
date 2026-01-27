@@ -55,7 +55,7 @@ export default function Contact() {
                   <div>
                     <p className="text-sm text-textSecondary mb-1">Email Us</p>
                     <p className="font-bold">
-                      Visionspeaks.multimedia@gmail.com
+                      ceo@visionspeakstech.com
                     </p>
                   </div>
                 </div>
