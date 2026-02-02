@@ -34,6 +34,7 @@ export default function TestimonialsCTA() {
           </p>
 
           <Link
+          aria-label="Open Testimonials page"
             href="/testimonials"
             className="inline-flex items-center gap-3 px-10 py-4
                        bg-black text-white rounded-full font-bold text-lg

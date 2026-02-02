@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link aria-label="Open homepage" href="/" className="flex items-center space-x-2">
                <Image src={logo} alt="LOGO" height={40} />
               <span className="text-xl font-bold tracking-tighter">VISIONSPEAKS</span>
             </Link>
@@ -25,11 +25,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6">Quick Links</h4>
             <ul className="space-y-4 text-textSecondary">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
-              <li><Link href="/projects" className="hover:text-primary transition-colors">Projects</Link></li>
-              <li><Link href="/founder" className="hover:text-primary transition-colors">The Founder</Link></li>
-              <li><Link href="/downloads" className="hover:text-primary transition-colors">Downloads</Link></li>
+              <li><Link aria-label="Open About Us page" href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link aria-label="Open Services page"  href="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
+              <li><Link aria-label="Open Projects page" href="/projects" className="hover:text-primary transition-colors">Projects</Link></li>
+              <li><Link aria-label="Open Founder page" href="/founder" className="hover:text-primary transition-colors">The Founder</Link></li>
+              <li><Link aria-label="Open Downloads page" href="/downloads" className="hover:text-primary transition-colors">Downloads</Link></li>
             </ul>
           </div>
 

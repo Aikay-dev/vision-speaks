@@ -212,7 +212,11 @@ export default function Projects() {
               >
                 <div className="flex-1 w-full md:w-1/2 px-8">
                   {/* Wrap the card in Link */}
-                  <Link href={`/projects/${project.id}`} className="block">
+                  <Link
+                    aria-label={`Open project ${project.title}`}
+                    href={`/projects/${project.id}`}
+                    className="block"
+                  >
                     <div
                       className={`glass-card p-8 rounded-3xl border-l-4 cursor-pointer hover:shadow-xl transition-all ${
                         idx % 2 === 0

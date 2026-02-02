@@ -32,7 +32,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link
+            aria-label="Open homepage"
+            href="/"
+            className="flex items-center space-x-2 group"
+          >
             <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
               <Image src={logo} alt="LOGO" height={50} />
             </div>
@@ -50,6 +54,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
+                aria-label={`Open ${link.name} page`}
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-textSecondary hover:text-primary transition-colors"
@@ -58,6 +63,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
+              aria-label="Get a quote"
               href="/contact"
               className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all transform hover:scale-105"
             >
@@ -89,6 +95,7 @@ export default function Navbar() {
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
+                  aria-label={`Open ${link.name} page`}
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}

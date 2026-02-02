@@ -42,7 +42,11 @@ export default function Home() {
               Innovation in Motion
             </span>
             <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter">
-              Now the <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">Vision</span> is Speaking
+              Now the{" "}
+              <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">
+                Vision
+              </span>{" "}
+              is Speaking
             </h1>
             <p className="text-xl md:text-2xl text-textSecondary max-w-3xl mx-auto mb-12 leading-relaxed">
               Cutting-edge Multimedia, IT & Security Solutions for Africa and
@@ -50,6 +54,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
+                aria-label="Open Services page"
                 href="/services"
                 className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary/90 transition-all flex items-center justify-center group"
               >
@@ -57,6 +62,7 @@ export default function Home() {
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
+                aria-label="Open Contact Us page"
                 href="/contact"
                 className="w-full sm:w-auto px-8 py-4 bg-surface border border-border text-white rounded-full font-bold text-lg hover:bg-border transition-all"
               >
@@ -201,6 +207,7 @@ export default function Home() {
                 through professional, UK-standard monitoring."
               </p>
               <Link
+                aria-label="Open Founder page"
                 href="/founder"
                 className="inline-flex items-center text-primary font-bold hover:underline"
               >
