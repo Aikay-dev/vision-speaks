@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6">Quick Links</h4>
+            <h2 className="text-lg font-bold mb-6">Quick Links</h2>
             <ul className="space-y-4 text-textSecondary">
               <li><Link aria-label="Open About Us page" href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link aria-label="Open Services page"  href="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6">Services</h4>
+            <h2 className="text-lg font-bold mb-6">Services</h2>
             <ul className="space-y-4 text-textSecondary">
               <li>CCTV Monitoring</li>
               <li>Smart Home Automation</li>
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6">Contact Info</h4>
+            <h2 className="text-lg font-bold mb-6">Contact Info</h2>
             <ul className="space-y-4 text-textSecondary">
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
