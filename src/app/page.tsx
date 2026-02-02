@@ -9,7 +9,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
-import preciouspic from "@/assets/pfp.jpeg";
+import preciouspic from "@/assets/pfp.jpg";
 import Image from "next/image";
 import ScrollDown from "@/components/scroll-down";
 import TestimonialsCTA from "@/components/test-cta";

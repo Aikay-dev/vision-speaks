@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   Globe,
 } from "lucide-react";
-import preciouspic from "@/assets/pfp.jpeg";
+import preciouspic from "@/assets/pfp.jpg";
 import Image from "next/image";
 import type { Metadata } from "next";
 
