@@ -74,6 +74,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
+              aria-label="open hamburger menu"
               onClick={() => setIsOpen(!isOpen)}
               className="text-text p-2"
             >
