@@ -2,7 +2,10 @@
 import { motion } from "framer-motion";
 import { Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
-import preciouspic from "@/assets/pfp2.png";
+import preciouspic from "@/assets/WhatsApp Image 2026-02-02 at 15.41.45.jpeg";
+import enobongPic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.15 (1).jpeg";
+import ericpic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.15.jpeg";
+import chidipic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.16.jpeg";
 import emmanuelpic from "@/assets/emmanuel.png";
 import type { Metadata } from "next";
 
@@ -78,8 +81,7 @@ const team = [
   {
     name: "Enobong A. Precious",
     role: "GM / Head: Customer Relations",
-    image:
-      "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: enobongPic,
   },
   {
     name: "Emmanuel Esekhaigbe",
@@ -89,18 +91,16 @@ const team = [
     mail: "mailto:emmanese2020@gmail.com",
   },
   {
-    name: "Enobong Odungide",
-    role: "Head: System Analyst / Engineering",
-    desc: "BEngr, MSc Cyber Forensics, CEH, CISM, CompTIA+, MCSA, CCNA",
-    image:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    name: "Eric Akhiankore",
+    role: "Digital Media Productions Manager",
+    desc: "BSc. Business Management",
+    image: ericpic,
   },
   {
     name: "Chidiebere Okoji",
     role: "Technical Director / Command Centre Administrator",
     desc: "BEngr Electrical & Electronic Engineering",
-    image:
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: chidipic,
   },
 ];
 
