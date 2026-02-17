@@ -69,12 +69,14 @@ export default function ProjectPage() {
                   className="w-full h-64 object-cover"
                 />
               )
-            ) : (
+            ) : typeof item.src === "string" ? (
               <video
                 src={item.src}
                 controls
                 className="w-full h-64 object-cover"
               />
+            ) : (
+              <></>
             )}
           </div>
         ))}
