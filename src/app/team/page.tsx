@@ -131,7 +131,7 @@ export default function Team() {
                 <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 object-top"
                   unoptimized
                   width={300}
                   height={500}
