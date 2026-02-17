@@ -2,6 +2,16 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import elec1 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.08 (1).jpeg";
+import elec2 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.08 (2).jpeg";
+import elec3 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.08.jpeg";
+import elec4 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.09 (1).jpeg";
+import elec5 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.09 (2).jpeg";
+import elec6 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.09 (3).jpeg";
+import elec7 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.09 (4).jpeg";
+import elec8 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.09 (5).jpeg";
+import elec9 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.09.jpeg";
+import elec10 from "@/assets/2024-election/WhatsApp Image 2026-02-17 at 16.26.10.jpeg";
 // import type { Metadata } from "next";
 
 // export const metadata: Metadata = {
@@ -179,6 +189,31 @@ export const projects = [
       },
     ],
   },
+  {
+    id: "9",
+    year: "2024",
+    title:
+      "Real-Time Election Video Monitoring and Live Result Collation Command Centre/Situation Room",
+    desc: "Election monitoring & surveillance",
+    category: "IT",
+    media: [
+      { type: "image", src: elec1, isExternal: false },
+      { type: "image", src: elec2, isExternal: false },
+      { type: "image", src: elec3, isExternal: false },
+      { type: "image", src: elec4, isExternal: false },
+      { type: "image", src: elec5, isExternal: false },
+      { type: "image", src: elec6, isExternal: false },
+      { type: "image", src: elec7, isExternal: false },
+      { type: "image", src: elec8, isExternal: false },
+      { type: "image", src: elec9, isExternal: false },
+      { type: "image", src: elec10, isExternal: false },
+      // {
+      //   type: "image",
+      //   src: "https://images.unsplash.com/photo-1612831666416-5c2ed0de805b",
+      //   isExternal: true,
+      // },
+    ],
+  },
 ];
 
 export default function Projects() {
@@ -200,7 +235,7 @@ export default function Projects() {
           <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border hidden md:block" />
 
           <div className="space-y-12">
-            {projects.map((project, idx) => (
+            {[...projects].reverse().map((project, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}

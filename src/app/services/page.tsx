@@ -79,6 +79,7 @@ const serviceCategories = [
     color: "text-primary",
     services: [
       "24/7 CCTV Monitoring Services",
+      "Election Monitoring",
       "Remote Surveillance & Incident Alerts",
       "Home and Business Security Monitoring",
       "Smart Surveillance Integration",
