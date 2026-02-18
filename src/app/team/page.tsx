@@ -4,8 +4,8 @@ import { Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import preciouspic from "@/assets/WhatsApp Image 2026-02-02 at 15.41.45.jpeg";
 import enobongPic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.15 (1).jpeg";
-import ericpic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.15.jpeg";
-import chidipic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.16.jpeg";
+import ericpic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.16.jpeg";
+import chidipic from "@/assets/WhatsApp Image 2026-02-04 at 18.49.15.jpeg";
 import emmanuelpic from "@/assets/emmanuel.png";
 import type { Metadata } from "next";
 

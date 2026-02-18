@@ -191,7 +191,7 @@ export const projects = [
   },
   {
     id: "9",
-    year: "2024",
+    year: "2011",
     title:
       "Real-Time Election Video Monitoring and Live Result Collation Command Centre/Situation Room",
     desc: "Election monitoring & surveillance",
