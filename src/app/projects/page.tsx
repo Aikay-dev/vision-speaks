@@ -211,8 +211,7 @@ export const projects = [
     desc: "Studio & Mobile Studio Design",
     category: "Multimedia",
     media: [
-      // { type: "video", src: "/videos/eket1.mp4", isExternal: false },
-      // there is an issue here
+      { type: "video", src: "/videos/eket1.mp4", isExternal: false },
       { type: "image", src: eket1, isExternal: false },
       { type: "image", src: eket2, isExternal: false },
       { type: "image", src: eket3, isExternal: false },
