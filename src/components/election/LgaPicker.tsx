@@ -30,10 +30,22 @@ export default function LgaPicker({
     onChange(picked.has(k) ? value.filter((l) => key(l) !== k) : [...value, { state, name }]);
   };
 
+  const everyLga = NIGERIA.flatMap((s) => s.lgas.map((name) => ({ state: s.name, name }))).filter((l) => !lockedSet.has(key(l)));
+  const allNigeria = everyLga.length > 0 && everyLga.every((l) => picked.has(key(l)));
+
   const countFor = (s: string) => value.filter((l) => l.state === s).length + locked.filter((l) => l.state === s).length;
 
   return (
     <div className="space-y-4">
+      {everyLga.length > 0 && (
+        <button
+          type="button"
+          className="rounded-lg border border-el-border bg-el-surface px-3 py-2 text-sm font-semibold text-el-brand transition hover:bg-el-surface-2"
+          onClick={() => onChange(allNigeria ? [] : everyLga)}
+        >
+          {allNigeria ? "Clear all states & LGAs" : `Select all ${NIGERIA.length} states & ${everyLga.length} LGAs`}
+        </button>
+      )}
       <Select value={state} onChange={(e) => setState(e.target.value)} aria-label="State">
         <option value="">Choose a state…</option>
         {NIGERIA.map((s) => (

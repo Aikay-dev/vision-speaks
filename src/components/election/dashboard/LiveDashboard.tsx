@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { AlertTriangle, ArrowRight, Loader2 } from "lucide-react";
+import { AlertTriangle, ArrowRight, Loader2, Tv } from "lucide-react";
 import { useLive } from "./useLive";
 import { AreaTable, CommentsPanel, LiveFeed, PartyStandings, ReportingTimeline, ShareDonut, StatTiles, UpdatedAgo } from "./parts";
 import { Card, cx, fmt } from "../ui";
@@ -26,7 +26,12 @@ export default function LiveDashboard({ electionId, status }: { electionId: stri
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <UpdatedAgo iso={data.updatedAt} error={Boolean(error)} />
+        <div className="flex items-center gap-4">
+          <UpdatedAgo iso={data.updatedAt} error={Boolean(error)} />
+          <Link href={`/election/tv/${electionId}`} target="_blank" className="inline-flex items-center gap-1.5 text-xs font-semibold text-el-brand hover:underline">
+            <Tv className="size-3.5" /> Open TV view
+          </Link>
+        </div>
         <div className="inline-flex rounded-lg border border-el-border bg-el-surface p-0.5 text-xs font-medium" role="group" aria-label="Which results to count">
           {[
             [false, "All submitted"],

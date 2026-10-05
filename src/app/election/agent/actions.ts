@@ -26,7 +26,8 @@ export type SubmitResult = { ok: true; status: string } | { ok: false; error: st
 const isEdgeStoreUrl = (u: string) => {
   try {
     const host = new URL(u).hostname;
-    return host === "edgestore.dev" || host.endsWith(".edgestore.dev");
+    // Newer EdgeStore projects serve files from <project>.esfiles.dev; older ones from files.edgestore.dev.
+    return ["edgestore.dev", "esfiles.dev"].some((d) => host === d || host.endsWith(`.${d}`));
   } catch {
     return false;
   }
@@ -59,7 +60,11 @@ export async function submitResult(raw: z.input<typeof input>): Promise<SubmitRe
     if (given.size !== partyIds.size || [...given.keys()].some((id) => !partyIds.has(id))) {
       return { ok: false, error: "The party list has changed. Refresh the page and enter the scores again." };
     }
-    if (data.images.some((i) => !isEdgeStoreUrl(i.url))) return { ok: false, error: "Invalid photo. Please upload it again." };
+    const badImage = data.images.find((i) => !isEdgeStoreUrl(i.url));
+    if (badImage) {
+      console.warn("[election] submit rejected, photo URL not on an EdgeStore host:", badImage.url.slice(0, 120));
+      return { ok: false, error: "Invalid photo. Please upload it again." };
+    }
 
     const votes = parties.map((p) => given.get(String(p._id)) ?? 0);
     const totals = computeTotals({ votes, rejectedVotes: data.rejectedVotes });

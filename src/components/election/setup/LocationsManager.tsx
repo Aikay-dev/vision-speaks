@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState, useTransition } from "react";
-import { ChevronRight, Loader2, Pencil, Plus, Trash2, Upload, X, Check } from "lucide-react";
+import { ChevronRight, Loader2, Pencil, Plus, Search, Trash2, Upload, X, Check } from "lucide-react";
 import {
   addLgas,
   addPollingUnit,
@@ -61,6 +61,40 @@ export default function LocationsManager({ electionId, nodes }: { electionId: st
     }
     return { lgas, wardsByLga, pusByWard, lgaTotals, wardTotals };
   }, [nodes]);
+
+  const [query, setQuery] = useState("");
+  // Start with states expanded only when there are few; otherwise the page opens as a short list of states.
+  const [openStates, setOpenStates] = useState<Set<string>>(() => {
+    const states = new Set(lgas.map((l) => l.state));
+    return states.size <= 2 ? states : new Set();
+  });
+  const q = query.trim().toLowerCase();
+
+  const groups = useMemo(() => {
+    const match = (l: LocNode) =>
+      !q ||
+      l.name.toLowerCase().includes(q) ||
+      l.state.toLowerCase().includes(q) ||
+      (wardsByLga.get(l.id) ?? []).some((w) => w.name.toLowerCase().includes(q));
+    const out: { state: string; lgas: LocNode[]; totals: Totals }[] = [];
+    for (const l of lgas) {
+      if (!match(l)) continue;
+      let g = out.at(-1);
+      if (!g || g.state !== l.state) {
+        g = { state: l.state, lgas: [], totals: { wards: 0, pus: 0, registered: 0, covered: 0 } };
+        out.push(g);
+      }
+      const t = lgaTotals.get(l.id);
+      g.lgas.push(l);
+      if (t) {
+        g.totals.wards += t.wards;
+        g.totals.pus += t.pus;
+        g.totals.registered += t.registered;
+        g.totals.covered += t.covered;
+      }
+    }
+    return out;
+  }, [lgas, lgaTotals, wardsByLga, q]);
 
   const totals = useMemo(() => {
     const pus = nodes.filter((n) => n.level === "pu");
@@ -135,12 +169,62 @@ export default function LocationsManager({ electionId, nodes }: { electionId: st
         </p>
       )}
 
+      {lgas.length > 0 && (
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="relative min-w-60 flex-1">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-el-muted" />
+            <Input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search state, LGA or ward…"
+              aria-label="Search locations"
+              className="pl-9"
+            />
+          </div>
+          {!q && groups.length > 1 && (
+            <button
+              type="button"
+              className="text-xs font-semibold text-el-brand hover:underline"
+              onClick={() => setOpenStates(openStates.size ? new Set() : new Set(groups.map((g) => g.state)))}
+            >
+              {openStates.size ? "Collapse all states" : "Expand all states"}
+            </button>
+          )}
+        </div>
+      )}
+
       <Card>
         {lgas.length === 0 ? (
           <EmptyState title="No LGAs yet" body="Add the LGAs you're covering, then their wards and polling units." />
+        ) : groups.length === 0 ? (
+          <EmptyState title="No matches" body={`Nothing matches "${query}".`} />
         ) : (
+          <div className="divide-y divide-el-border">
+            {groups.map((g) => {
+              const stateOpen = Boolean(q) || openStates.has(g.state);
+              return (
+                <section key={g.state}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const next = new Set(openStates);
+                      if (next.has(g.state)) next.delete(g.state);
+                      else next.add(g.state);
+                      setOpenStates(next);
+                    }}
+                    className="flex w-full items-center gap-3 bg-el-surface-2 px-3 py-3 text-left sm:px-4"
+                  >
+                    <ChevronRight className={cx("size-4 shrink-0 text-el-muted transition", stateOpen && "rotate-90")} />
+                    <span className="font-bold">{g.state === "FCT" ? "FCT (Abuja)" : g.state}</span>
+                    <span className="num ml-auto flex gap-5 text-xs text-el-muted">
+                      <span>{fmt(g.lgas.length)} LGAs</span>
+                      <span className="hidden sm:inline">{fmt(g.totals.wards)} wards</span>
+                      <span className="hidden sm:inline">{fmt(g.totals.pus)} PUs</span>
+                    </span>
+                  </button>
+                  {stateOpen && (
           <ul className="divide-y divide-el-border">
-            {lgas.map((lga) => {
+            {g.lgas.map((lga) => {
               const t = lgaTotals.get(lga.id) ?? { wards: 0, pus: 0, registered: 0, covered: 0 };
               const open = openLga === lga.id;
               const wards = (wardsByLga.get(lga.id) ?? []).sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
@@ -243,6 +327,11 @@ export default function LocationsManager({ electionId, nodes }: { electionId: st
               );
             })}
           </ul>
+                  )}
+                </section>
+              );
+            })}
+          </div>
         )}
       </Card>
     </div>

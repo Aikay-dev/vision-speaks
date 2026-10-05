@@ -8,7 +8,7 @@ import { SESSION_COOKIE, verifySession } from "@/lib/election/session-core";
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const session = await verifySession(request.cookies.get(SESSION_COOKIE)?.value);
-  const needs = pathname.startsWith("/election/admin") ? "admin" : "agent";
+  const needs = pathname.startsWith("/election/admin") || pathname.startsWith("/election/tv") ? "admin" : "agent";
 
   if (!session || session.role !== needs) {
     const url = request.nextUrl.clone();
@@ -20,5 +20,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/election/admin/:path*", "/election/agent/:path*"],
+  matcher: ["/election/admin/:path*", "/election/tv/:path*", "/election/agent/:path*"],
 };

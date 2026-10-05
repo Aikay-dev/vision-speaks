@@ -14,6 +14,11 @@ import Image from "next/image";
 import ScrollDown from "@/components/scroll-down";
 import TestimonialsCTA from "@/components/test-cta";
 import ElectionPortalSection from "@/components/ElectionPortalSection";
+import ElectionHowItWorks from "@/components/ElectionHowItWorks";
+
+// Election season: puts election monitoring first on the homepage. Set to false after the election
+// to bring back the original hero and move the election section back down the page.
+const ELECTION_SEASON = true;
 
 export default function Home() {
   return (
@@ -40,34 +45,44 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block py-1 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-6 tracking-widest uppercase">
-              Innovation in Motion
+              {ELECTION_SEASON ? "Election Monitoring" : "Innovation in Motion"}
             </span>
-            <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter">
-              Now the{" "}
-              <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">
-                Vision
-              </span>{" "}
-              is Speaking
-            </h1>
+            {ELECTION_SEASON ? (
+              <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter">
+                Every vote,{" "}
+                <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">
+                  counted live
+                </span>
+              </h1>
+            ) : (
+              <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter">
+                Now the{" "}
+                <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">
+                  Vision
+                </span>{" "}
+                is Speaking
+              </h1>
+            )}
             <p className="text-xl md:text-2xl text-textSecondary max-w-3xl mx-auto mb-12 leading-relaxed">
-              Cutting-edge Multimedia, IT & Security Solutions for Africa and
-              Beyond. We bridge the gap between technology and safety.
+              {ELECTION_SEASON
+                ? "Polling-unit results with photo evidence, collated into one live dashboard for your party. Know where you stand while the counting is still going on."
+                : "Cutting-edge Multimedia, IT & Security Solutions for Africa and Beyond. We bridge the gap between technology and safety."}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
-                aria-label="Open Services page"
-                href="/services"
+                aria-label={ELECTION_SEASON ? "Book election monitoring" : "Open Services page"}
+                href={ELECTION_SEASON ? "/contact" : "/services"}
                 className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary/90 transition-all flex items-center justify-center group"
               >
-                Our Services{" "}
+                {ELECTION_SEASON ? "Book Election Monitoring" : "Our Services"}{" "}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                aria-label="Open Contact Us page"
-                href="/contact"
+                aria-label={ELECTION_SEASON ? "Open the election portal" : "Open Contact Us page"}
+                href={ELECTION_SEASON ? "/election" : "/contact"}
                 className="w-full sm:w-auto px-8 py-4 bg-surface border border-border text-white rounded-full font-bold text-lg hover:bg-border transition-all"
               >
-                Contact Us
+                {ELECTION_SEASON ? "Access the Portal" : "Contact Us"}
               </Link>
             </div>
           </motion.div>
@@ -76,6 +91,13 @@ export default function Home() {
         <div className="hero-glow top-1/4 left-1/4" />
         <div className="hero-glow bottom-1/4 right-1/4" />
       </section>
+
+      {ELECTION_SEASON && (
+        <>
+          <ElectionPortalSection />
+          <ElectionHowItWorks />
+        </>
+      )}
 
       {/* Quick Intro */}
       <section id="intro" className="py-24 bg-surface/30">
@@ -184,7 +206,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ElectionPortalSection />
+      {!ELECTION_SEASON && <ElectionPortalSection />}
 
       {/* Founder Preview */}
       <section className="py-24 bg-surface">
