@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Shield, Cpu, Camera } from "lucide-react";
+import { Menu, X, Vote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
@@ -63,6 +63,14 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
+              aria-label="Open the election monitoring portal"
+              href="/election"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-red-500 hover:text-red-400"
+            >
+              <Vote size={16} />
+              Election Portal
+            </Link>
+            <Link
               aria-label="Get a quote"
               href="/contact"
               className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all transform hover:scale-105"
@@ -105,6 +113,15 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              <Link
+                aria-label="Open the election monitoring portal"
+                href="/election"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex items-center gap-2 self-start rounded-full border border-white/25 px-4 py-2 text-base font-semibold text-white"
+              >
+                <Vote size={18} />
+                Election Portal
+              </Link>
             </div>
           </motion.div>
         )}

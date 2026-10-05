@@ -13,6 +13,7 @@ import preciouspic from "@/assets/pfp.jpg";
 import Image from "next/image";
 import ScrollDown from "@/components/scroll-down";
 import TestimonialsCTA from "@/components/test-cta";
+import ElectionPortalSection from "@/components/ElectionPortalSection";
 
 export default function Home() {
   return (
@@ -182,6 +183,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ElectionPortalSection />
 
       {/* Founder Preview */}
       <section className="py-24 bg-surface">

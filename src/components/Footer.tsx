@@ -89,6 +89,15 @@ export default function Footer() {
                   Downloads
                 </Link>
               </li>
+              <li>
+                <Link
+                  aria-label="Open the election monitoring portal"
+                  href="/election"
+                  className="hover:text-primary transition-colors"
+                >
+                  Election Portal
+                </Link>
+              </li>
             </ul>
           </div>
 

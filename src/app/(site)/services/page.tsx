@@ -165,7 +165,13 @@ export default function Services() {
                 {category.services.map((service, sIdx) => (
                   <li key={sIdx} className="flex items-start space-x-3 text-textSecondary">
                     <Zap className={`w-5 h-5 mt-1 shrink-0 ${category.color}`} />
-                    <span className="text-lg">{service}</span>
+                    {service === "Election Monitoring" ? (
+                      <a href="/election" className="text-lg underline decoration-red-500/60 underline-offset-4 hover:text-red-400">
+                        {service} <span className="text-sm text-red-400">(client portal →)</span>
+                      </a>
+                    ) : (
+                      <span className="text-lg">{service}</span>
+                    )}
                   </li>
                 ))}
               </ul>

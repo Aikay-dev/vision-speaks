@@ -47,3 +47,78 @@ body {
   filter: blur(60px);
   z-index: -1;
 }
+
+/* ───────────── Election portal ─────────────
+   Tokens are namespaced (el-*) so they never touch the marketing site.
+   Values switch with data-theme on .el-root; --el-brand is set per tenant. */
+@theme inline {
+  --color-el-bg: var(--el-bg);
+  --color-el-surface: var(--el-surface);
+  --color-el-surface-2: var(--el-surface-2);
+  --color-el-border: var(--el-border);
+  --color-el-text: var(--el-text);
+  --color-el-muted: var(--el-muted);
+  --color-el-brand: var(--el-brand);
+  --color-el-ok: var(--el-ok);
+  --color-el-warn: var(--el-warn);
+  --color-el-danger: var(--el-danger);
+  --color-el-ink: var(--el-ink);
+}
+
+.el-root {
+  --el-bg: #f4f5f7;
+  --el-surface: #ffffff;
+  --el-surface-2: #f8f9fb;
+  --el-border: #e2e5ea;
+  --el-text: #0f172a;
+  --el-muted: #5b6474;
+  --el-ok: #15803d;
+  --el-warn: #b45309;
+  --el-danger: #c81e1e;
+  --el-ink: #0b1220;
+  --el-brand: #0f172a;
+  color: var(--el-text);
+  background: var(--el-bg);
+  min-height: 100dvh;
+  font-feature-settings: "cv11", "ss01";
+  color-scheme: light;
+}
+
+.el-root[data-theme="dark"] {
+  --el-bg: #0a0e13;
+  --el-surface: #111821;
+  --el-surface-2: #161f2a;
+  --el-border: #233041;
+  --el-text: #e6ebf2;
+  --el-muted: #8a96a8;
+  --el-ok: #34d399;
+  --el-warn: #fbbf24;
+  --el-danger: #f87171;
+  --el-ink: #05080c;
+  color-scheme: dark;
+}
+
+.el-root .num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Brief tint when a live number changes. */
+@keyframes el-flash {
+  from { background-color: color-mix(in srgb, var(--el-brand) 18%, transparent); }
+  to { background-color: transparent; }
+}
+.el-flash {
+  animation: el-flash 900ms ease-out;
+}
+
+@keyframes el-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.el-live-dot {
+  animation: el-pulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .el-flash, .el-live-dot { animation: none; }
+}
