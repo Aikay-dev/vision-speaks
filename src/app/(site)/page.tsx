@@ -48,10 +48,10 @@ export default function Home() {
               {ELECTION_SEASON ? "Election Monitoring" : "Innovation in Motion"}
             </span>
             {ELECTION_SEASON ? (
-              <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter">
-                Every vote,{" "}
+              <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">
+                Every vote counted, collated and{" "}
                 <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">
-                  counted live
+                  monitored live
                 </span>
               </h1>
             ) : (
